@@ -1,5 +1,5 @@
 <template>
-  <div class="card game-card">
+  <div class="card game-card" @click="selectGame(game.id)">
     <div class="image-wrapper">
       <!-- Image Goes Here -->
       <img :src="game.background_image" :alt="game.name">
@@ -17,6 +17,11 @@
     name: 'GameCard',
     props: {
       game: null
+    },
+    methods: {
+      selectGame(gameId) {
+        this.$router.push(`/details/${gameId}`)
+      },
     }
   }
 </script>

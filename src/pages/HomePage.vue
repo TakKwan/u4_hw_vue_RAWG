@@ -8,7 +8,7 @@
       </form>
       <h2>Search Results</h2>
       <section v-if="searched" class="search-results container-grid">
-        <GameCard v-for="game in searchResults" :key="game.id" :game="game" @click="selectGame(game.id)"/>
+        <GameCard v-for="game in searchResults" :key="game.id" :game="game" />
       </section>
     </div>
 
@@ -51,9 +51,6 @@ import GameCard from '../components/GameCard.vue'
       },
       handleChange(event) {
         this.searchQuery = event.target.value
-      },
-      selectGame(gameId) {
-        this.$router.push(`/details/${gameId}`)
       },
       selectGenre(genreId) {
         this.$router.push(`/games/${genreId}`)

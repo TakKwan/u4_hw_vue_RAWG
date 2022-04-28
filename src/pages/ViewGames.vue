@@ -1,7 +1,7 @@
 <template>
   <select name="Sort Rating By" id="sort_dropdown" @change="changeOrder">
-    <option value="">ASCE</option>
     <option value="-">DESC</option>
+    <option value="">ASCE</option>
   </select>
   <div className="container-grid">
     <GameCard v-for="game in games" :key="game.id" :game="game" />
@@ -17,7 +17,7 @@ export default {
   name: 'ViewGames',
   data: () => ({
     games: [],
-    order: ''
+    order: '-'
   }),
   mounted() {
     this.getGamesByGenre()
